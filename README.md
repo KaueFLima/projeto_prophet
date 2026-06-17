@@ -4,7 +4,7 @@ Este projeto utiliza a biblioteca Prophet para modelar e prever o comportamento 
 
 ## Estrutura do Projeto
 
-* `analise_temperatura.py`: Script principal que carrega os dados, treina o modelo, avalia a precisão e gera os gráficos.
+* `validação.py`: Script principal que carrega os dados, treina o modelo, avalia a precisão e gera os gráficos.
 * `dados_temperatura_treino.csv`: Dados históricos do ano base (ex: 2024) utilizados para treinar o algoritmo.
 * `dados_temperatura_validacao.csv`: Dados do ano seguinte (ex: 2025) utilizados exclusivamente para validar a precisão das previsões geradas.
 * `requirements.txt`: Lista de dependências do Python necessárias para rodar o projeto.
@@ -22,6 +22,6 @@ Ao executar o script, os seguintes arquivos serão criados na raiz do projeto:
    pip install -r requirements.txt
 
 3. Execute o script principal:
-   python analise_temperatura.py
+   python validação.py
 
 Após a execução, os resultados das métricas (MAE e R²) serão exibidos no terminal e os gráficos serão salvos no diretório atual.
