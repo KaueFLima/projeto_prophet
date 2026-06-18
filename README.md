@@ -1,49 +1,45 @@
-Projetos de Previsão de Séries Temporais com Prophet
+# Previsão de Séries Temporais com Prophet
 
-Este projeto contém scripts em Python que demonstram a aplicação prática da biblioteca Prophet para a previsão de séries temporais. O objetivo é ilustrar como o algoritmo lida com diferentes frequências de dados e tipos de sazonalidade em dois cenários de negócios distintos.
+Scripts em Python para previsão de séries temporais com a biblioteca Prophet, aplicados a dois cenários de negócios com frequências e tipos de sazonalidade distintos.
 
-Estrutura do Projeto
+---
 
-O projeto é dividido em dois casos de uso principais:
+## Estrutura do Projeto
 
-1. Análise de Sensores de Temperatura (IoT)
+### 1. Análise de Sensores de Temperatura (IoT)
 
-Arquivo: analise_temperatura.py
+**Arquivo:** `analise_temperatura.py`
 
-Focado na previsão de dados em alta frequência (horária). O modelo é treinado com dados históricos de temperatura de um ano base (2024) para prever o comportamento do ano seguinte (2025).
+Previsão de dados em alta frequência (horária). O modelo é treinado com dados de 2024 para prever o comportamento de 2025, capturando sazonalidades diárias, semanais e anuais.
 
-Propósito: Estabelecer uma linha de base de normalidade térmica, capturando sazonalidades diárias, semanais e anuais.
+Requer os arquivos `dados_temperatura_treino.csv` e `dados_temperatura_validacao.csv` no diretório local.
 
-Dados: Requer os arquivos dados_temperatura_treino.csv e dados_temperatura_validacao.csv no diretório local.
+### 2. Análise de Volume de Vendas no Varejo
 
-2. Análise de Volume de Vendas no Varejo
+**Arquivo:** `analise_varejo.py`
 
-Arquivo: analise_varejo.py (ou nome equivalente do segundo script)
+Previsão de dados em baixa frequência (mensal). Testa a capacidade preditiva do Prophet com múltiplos pontos de corte histórico (2004, 2006 e 2008), usando sazonalidade multiplicativa.
 
-Focado na previsão de dados macroeconômicos em baixa frequência (mensal). O script consome um dataset público e testa a capacidade preditiva do Prophet utilizando múltiplos pontos de corte histórico (2004, 2006 e 2008).
+Os dados são consumidos automaticamente via `example_retail_sales.csv` do repositório oficial do Prophet.
 
-Propósito: Prever o volume de vendas a longo prazo aplicando o modo de sazonalidade multiplicativa, ideal para cenários onde a variação dos ciclos aumenta conforme o volume cresce.
+---
 
-Dados: Consome automaticamente o dataset example_retail_sales.csv diretamente do repositório oficial do Prophet.
+## Dependências
 
-Dependências
-
-Para executar os scripts, é necessário instalar as seguintes bibliotecas Python:
-
-pandas
-
-prophet
-
-matplotlib
-
-scikit-learn
-
-Você pode instalá-las rodando o comando:
+```bash
 pip install pandas prophet matplotlib scikit-learn
+```
 
-Como Executar
+---
 
-Execute qualquer um dos scripts diretamente pelo terminal. Ao final da execução, as métricas de Erro Médio Absoluto (MAE) serão calculadas e um gráfico interativo contendo os dados reais, a linha de previsão, o ponto de corte e o intervalo de confiança será exibido na tela.
+## Como Executar
 
-Exemplo de execução:
+```bash
 python analise_temperatura.py
+```
+
+```bash
+python analise_varejo.py
+```
+
+Ao final da execução, as métricas de Erro Médio Absoluto (MAE) são exibidas e um gráfico interativo é gerado com os dados reais, a linha de previsão, o ponto de corte e o intervalo de confiança.
